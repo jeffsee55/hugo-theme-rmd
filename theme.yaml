@@ -1,0 +1,9 @@
+---
+name: rmd
+description: Remediant Hugo theme
+homepage: https://github.com/remediant/hugo-theme-rmd
+tags:
+  - Hugo
+min_version: 0.58.3
+author:
+  name: Timothy Keeler

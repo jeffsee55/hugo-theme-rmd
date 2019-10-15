@@ -1,0 +1,8 @@
+{{ define "main" }}
+    {{- partial "post-time.html" . -}}
+    {{ .Content | replaceRE "<table>" "<table class=\"table table-hover\">" | replaceRE "<img" "<img class=\"img-fluid\"" | safeHTML }}
+    <hr/>
+    {{- partial "post-info.html" . -}}
+    
+    {{- partial "post-nav.html" . -}}
+{{ end }}

@@ -1,0 +1,9 @@
+<aside class="d-none d-xl-block col-xl-2 bd-toc">
+    <h4>Table of Contents</h4>
+    {{- if .Params.toc }}
+        <hr />
+        <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+        {{ .TableOfContents }}
+        <hr />
+    {{- end }}
+</aside>  

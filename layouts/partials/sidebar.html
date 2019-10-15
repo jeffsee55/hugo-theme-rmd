@@ -1,0 +1,26 @@
+<aside class="col-12 col-md-3 col-xl-2 bd-sidebar">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.sidenav }}
+        {{ template "nav_item" (dict "currentPage" $currentPage "content" .) }}
+    {{ end }}
+</aside>
+
+{{ define "nav_item" }}
+    {{ $currentPage := .currentPage }}
+    {{with .content}}
+    <ul>
+    {{ if .HasChildren }}
+        <ul data-toggle="collapse" href="#{{ .Name | urlize }}" role="button" aria-expanded="false" aria-controls="{{ .Name | urlize }}">{{ .Name }} <i class="pl-1 text-xs fas fa-caret-down"></i></ul>
+        <li id="{{ .Name | urlize }}" class='panel-collapse collapse {{ if $currentPage.HasMenuCurrent "sidenav" . }}show{{ end }}'>
+        {{ range .Children }}
+            {{ template "nav_item" (dict "currentPage" $currentPage "content" .) }}
+        {{ end }}
+        </li>
+    {{ else }}
+        <li>
+        <a class='{{ if $currentPage.IsMenuCurrent "sidenav" . }}active{{ end }}' href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+    {{ end }}
+    {{ end }}
+    </ul>
+{{ end }}

@@ -1,0 +1,18 @@
+{{ $jquery := resources.Get "js/vendor/jquery.min.js" }}
+{{ $popperjs := resources.Get "js/vendor/popper.min.js" }}
+{{ $bootstrap := resources.Get "js/vendor/bootstrap.min.js" }}
+{{ $mermaid := resources.Get "js/vendor/mermaid.min.js" }}
+{{ $clipboard := resources.Get "js/vendor/clipboard.min.js" }}
+{{ $js := slice $jquery $popperjs $bootstrap $mermaid $clipboard | resources.Concat "js/bundle.js" | resources.Minify }}
+
+<script src="{{$js.RelPermalink}}"></script>
+<script>mermaid.initialize({startOnLoad:true,theme: 'dark'});</script>
+<script>
+// Mermaid markdown conversion
+jQuery(document).ready(function() {
+    $('code.language-mermaid').each(function(index, element) {
+        var content = $(element).html().replace(/&amp;/g, '&');
+        $(element).parent().replaceWith('<div class="jumbotron"><div class="mermaid" align="center">' + content + '</div></div>');
+    });
+});
+</script>

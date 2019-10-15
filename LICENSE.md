@@ -1,2 +1,2 @@
 
-Copyright (C) 2019 Timothy Keeler
+Copyright (C) 2019 Remediant

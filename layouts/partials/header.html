@@ -1,0 +1,42 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  {{ if .Site.Params.logo }}
+  <img class="" src="{{.Site.Params.logo}}">
+  {{ end }}
+  <a class="navbar-brand font-rmd" href="#">Remediant</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      {{ range .Site.Menus.main }}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+      {{ if .Site.Menus.teams }}
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="teams" aria-expanded="false">Teams <span class="caret"></span></a>
+          <div class="dropdown-menu" aria-labelledby="teams">
+            {{ range .Site.Menus.teams }}
+            <a class="dropdown-item" href="{{.URL}}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+      </li>
+      {{ end }}
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Help</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,6 @@
+{{ printf "%#v" $.Site.Sections }}
+{{ range .Site.Sections }}
+    <hr />
+    <b>{{ printf "%#v" .Name }}</b>
+    <b>{{ printf "%#v" .Sections }}</b>
+{{ end }}

@@ -1,0 +1,30 @@
+{{ if or .NextInSection .PrevInSection }}
+<hr />
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div>
+            <span>{{ .Site.Params.ReadOtherPosts }}</span>
+        </div>
+
+        <div>
+            {{ if .NextInSection }}
+            <a href="{{ .NextInSection.Permalink }}">
+                <button type="button" class="btn btn-secondary">
+                    <span>←</span>
+                    <span>{{ .NextInSection.Title }}</span>
+                </button>
+            </a>
+            {{ end }}
+
+            {{ if .PrevInSection }}
+            <a href="{{ .PrevInSection.Permalink }}">
+                <button type="button" class="btn btn-secondary">
+                    <span>{{ .PrevInSection.Title }}</span>
+                    <span>→</span>
+                </button>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

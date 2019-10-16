@@ -1,5 +1,5 @@
 JS_ASSETS_DIR := assets/js/vendor/
-CSS_ASSETS_DIR := assets/css/vendor
+CSS_ASSETS_DIR := assets/scss/vendor
 build:
 	mkdir -p $(JS_ASSETS_DIR)
 	cp node_modules/jquery/dist/jquery.min.js $(JS_ASSETS_DIR)

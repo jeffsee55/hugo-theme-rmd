@@ -11,4 +11,4 @@ build:
 	mkdir -p $(CSS_ASSETS_DIR)/bootstrap
 	cp -r node_modules/bootstrap/scss/ $(CSS_ASSETS_DIR)/bootstrap
 	mkdir -p $(CSS_ASSETS_DIR)/fontawesome
-	cp -r node_modules/@fortawesome/fontawesome-free/scss $(CSS_ASSETS_DIR)/fontawesome
+	cp -r node_modules/@fortawesome/fontawesome-free/scss/ $(CSS_ASSETS_DIR)/fontawesome

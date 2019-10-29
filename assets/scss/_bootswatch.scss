@@ -47,6 +47,7 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Lato:400,700,400italic|
   ul, ol, li {
     margin-left: 5px;
     list-style-type: none;
+    cursor: pointer;
   }
   .active {
     color: $red;

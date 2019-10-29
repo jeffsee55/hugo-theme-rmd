@@ -1,8 +1,13 @@
 {{ define "main" }}
-    {{- partial "post-time.html" . -}}
+    {{- if not .Params.disableReadingTime }}
+        {{- partial "post-time.html" . -}}
+    {{- end }}
     {{ .Content | replaceRE "<table>" "<table class=\"table table-hover\">" | replaceRE "<img" "<img class=\"img-fluid\"" | safeHTML }}
     <hr/>
-    {{- partial "post-info.html" . -}}
-    
-    {{- partial "post-nav.html" . -}}
+    {{- if not .Params.disableInfoFooter }}
+        {{- partial "post-info.html" . -}}
+    {{- end }}
+    {{- if not .Params.disableNavFooter }}
+        {{- partial "post-nav.html" . -}}
+    {{- end }}
 {{ end }}

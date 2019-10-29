@@ -4,3 +4,5 @@
     <b>{{ printf "%#v" .Name }}</b>
     <b>{{ printf "%#v" .Sections }}</b>
 {{ end }}
+<hr />
+{{ range ( where .Site.RegularPages "Section" "employees") }}{{ . }}{{ end }}

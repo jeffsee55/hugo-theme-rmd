@@ -7,19 +7,19 @@
         </div>
 
         <div>
-            {{ if .NextInSection }}
-            <a href="{{ .NextInSection.Permalink }}">
+            {{ if .PrevInSection }}
+            <a href="{{ .PrevInSection.Permalink }}">
                 <button type="button" class="btn btn-secondary">
                     <span>←</span>
-                    <span>{{ .NextInSection.Title }}</span>
+                    <span>{{ .PrevInSection.Title }}</span>
                 </button>
             </a>
             {{ end }}
 
-            {{ if .PrevInSection }}
-            <a href="{{ .PrevInSection.Permalink }}">
+            {{ if .NextInSection }}
+            <a href="{{ .NextInSection.Permalink }}">
                 <button type="button" class="btn btn-secondary">
-                    <span>{{ .PrevInSection.Title }}</span>
+                    <span>{{ .NextInSection.Title }}</span>
                     <span>→</span>
                 </button>
             </a>

@@ -1,4 +1,4 @@
-<aside class="col-12 col-md-3 col-xl-2 bd-sidebar">
+<aside class="col-12 col-md-2 col-xl-2 bd-sidebar">
     {{ $currentPage := . }}
     {{ range .Site.Menus.sidenav }}
         {{ template "nav_item" (dict "currentPage" $currentPage "content" .) }}

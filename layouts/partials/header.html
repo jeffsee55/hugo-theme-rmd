@@ -2,7 +2,7 @@
   {{ if .Site.Params.logo }}
   <img class="" src="{{.Site.Params.logo}}">
   {{ end }}
-  <a class="navbar-brand font-rmd" href="#">Remediant</a>
+  <a class="navbar-brand font-rmd" href="/">Remediant</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
       </li>
       {{ range .Site.Menus.main }}
       <li class="nav-item">
@@ -31,7 +31,7 @@
         <a class="nav-link" href="#">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Help</a>
+        <a class="nav-link" href="/getting-started/introduction">Help</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

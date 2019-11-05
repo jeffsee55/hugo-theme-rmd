@@ -1,8 +1,22 @@
-{{ printf "%#v" $.Site.Sections }}
-{{ range .Site.Sections }}
-    <hr />
-    <b>{{ printf "%#v" .Name }}</b>
-    <b>{{ printf "%#v" .Sections }}</b>
-{{ end }}
-<hr />
-{{ range ( where .Site.RegularPages "Section" "employees") }}{{ . }}{{ end }}
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body>
+        {{- partial "header.html" . -}}
+        <div class="container-fluid">
+            <div class="row flex-xl-nowrap">
+                {{- partial "sidebar.html" . -}}
+                <content class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+                    <br><br>
+                    {{ .Content | replaceRE "<table>" "<table class=\"table table-hover\">" | replaceRE "<img" "<img class=\"img-fluid\"" | safeHTML }}
+                </content>
+                {{- if .Params.toc }}
+                    {{- partial "toc.html" . -}}
+                {{- end }}
+            </div>
+        </div>
+        
+        {{- partial "footer.html" . -}}
+        {{- partial "js.html" . -}}
+    </body>
+</html>
